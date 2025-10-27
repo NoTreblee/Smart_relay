@@ -1,0 +1,6 @@
+WIFI_SSID = ""
+WIFI_PASSWORD = ""
+HA_URL = "http://HA_IP:8123"
+HA_TOKEN = ""
+TARGET_URL = "http://RECIVER_IP/open"
+WEBREPL_PASSWORD = ""
