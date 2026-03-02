@@ -2,7 +2,7 @@
 
 A complete gate control system built with ESP32 microcontrollers using MicroPython. The system consists of two devices: a wireless button sender with temperature/humidity monitoring and a gate controller with relay control.
 
-## 🎯 Features
+##  Features
 
 ### Gate Controller (Receiver)
 - **HTTP API Server** - RESTful endpoint for gate control
@@ -18,7 +18,7 @@ A complete gate control system built with ESP32 microcontrollers using MicroPyth
 - **LED Feedback** - Visual confirmation of successful operations
 - **Interrupt-based** - Low power consumption with pin interrupts
 
-## 📋 Requirements
+##  Requirements
 
 ### Hardware
 - 2x ESP32 development boards
@@ -32,7 +32,7 @@ A complete gate control system built with ESP32 microcontrollers using MicroPyth
 - MicroPython firmware for ESP32
 - Home Assistant (optional, for sensor data)
 
-## 🔌 Wiring
+##  Wiring
 
 ### Gate Controller
 ```
@@ -50,7 +50,7 @@ DHT11 VCC → 3.3V
 DHT11 GND → GND
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 Create a `config.py` file on each ESP32:
 
@@ -71,7 +71,7 @@ HA_URL = "http://YOUR_HOME_ASSISTANT_IP:8123"
 HA_TOKEN = "your_home_assistant_token"
 ```
 
-## 🚀 Installation
+##  Installation
 
 1. **Flash MicroPython** on both ESP32 boards:
    ```bash
@@ -92,7 +92,7 @@ HA_TOKEN = "your_home_assistant_token"
 
 3. **Reboot** both devices
 
-## 📡 API Endpoints (Gate Controller)
+##  API Endpoints (Gate Controller)
 
 ### `GET /`
 Health check endpoint
@@ -108,7 +108,7 @@ curl http://GATE_IP/open
 # Response: "OK" (200) or "Cooldown active. Wait Xs" (429)
 ```
 
-## 🏠 Home Assistant Integration
+##  Home Assistant Integration
 
 The sender automatically reports sensor data to Home Assistant. Sensors will appear as:
 - `sensor.gate_temp` - Temperature in °C
@@ -116,7 +116,7 @@ The sender automatically reports sensor data to Home Assistant. Sensors will app
 
 Update interval: 10 seconds
 
-## 🔧 Customization
+##  Customization
 
 ### Adjust Gate Pulse Duration
 In gate controller `main.py`:
@@ -136,49 +136,8 @@ In sender `main.py`:
 if i >= 100:  # 100 * 0.1s = 10 seconds
 ```
 
-## 🐛 Troubleshooting
-
-### Gate controller not responding
-- Check Wi-Fi connection: LED should indicate connection status
-- Verify IP address: Check serial output for assigned IP
-- Test with: `curl http://GATE_IP/`
-
-### Button not working
-- Check wiring and pull-up resistor
-- Monitor serial output when pressing button
-- Verify `WAKE_PIN` matches your wiring
-
-### DHT11 sensor errors
-- Ensure proper 3.3V power supply
-- Check data pin connection
-- Wait 2 seconds between readings
-
-### WebREPL connection issues
-- Verify password in `config.py`
-- Connect to: `ws://DEVICE_IP:8266`
-- Check firewall settings
-
-## 📝 License
+##  License
 
 MIT License - feel free to modify and use for your projects
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## ⚠️ Safety Notice
-
-This system controls physical gate mechanisms. Ensure proper safety measures:
-- Test thoroughly before connecting to actual gates
-- Implement mechanical safety stops
-- Consider adding timeout mechanisms
-- Verify relay ratings match your gate motor
-- Add manual override capabilities
-
-## 📞 Support
-
-For issues and questions, please open an issue on GitHub.
-
----
-
-**Made with ❤️ for home automation enthusiasts**
