@@ -2,6 +2,8 @@
 
 A complete gate control system built with ESP32 microcontrollers using MicroPython. The system consists of two devices: a wireless button sender with temperature/humidity monitoring and a gate controller with relay control.
 
+![Diagram](docs/diagram,svg)
+
 ##  Features
 
 ### Gate Controller (Receiver)
